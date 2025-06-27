@@ -108,9 +108,11 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-2xl font-bold text-[#e768f4]">
-              {testimonials[active].titulo}
-            </h3>
+            <a href={testimonials[active].ruta} target="_blank">
+              <h3 className="text-2xl font-bold text-[#e768f4]">
+                {testimonials[active].titulo}
+              </h3>
+            </a>
             <p className="text-sm text-white dark:text-neutral-500">
               {testimonials[active].subtitulo}
             </p>
