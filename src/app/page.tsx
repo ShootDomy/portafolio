@@ -1,24 +1,22 @@
 "use client";
-import { CardProyect } from "@/components/CardProyect";
+import { Proyects } from "@/components/proyects";
 import { IMAGE_URL } from "@/utils/constans";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar, A11y, Parallax } from "swiper/modules";
 
 export default function Home() {
   return (
     <div className="h-screen w-screen">
       <div className="h-full flex flex-col">
         <div className="h-8 flex items-center justify-center"></div>
-        <div className="flex-1 p-3 space-y-3">
-          <div className="container mx-auto flex flex-row gap-5 items-center justify-around">
+        <div className="flex flex-col flex-1 p-3 justify-between">
+          <div className="container mx-auto flex flex-row gap-5 items-center justify-evenly">
             <Image
               src={IMAGE_URL}
               alt="Logo"
               width={500}
               height={500}
               priority
-              className="rounded-full w-96 h-96 object-cover"
+              className="rounded-full w-64 h-64 object-cover"
             />
             <div className="flex flex-col items-center justify-center">
               <h1 className="text-4xl font-bold text-center">
@@ -36,38 +34,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          <h2 className="text-2xl font-bold text-center">Mis proyectos</h2>
-
-          <div className="">
-            <Swiper
-              modules={[Navigation, Scrollbar, A11y, Parallax]}
-              spaceBetween={50}
-              slidesPerView={3}
-              navigation
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: true }}
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
-              loop
-              className="h-full"
-            >
-              <SwiperSlide>
-                <CardProyect />
-              </SwiperSlide>
-              <SwiperSlide>
-                <CardProyect />
-              </SwiperSlide>
-              <SwiperSlide>
-                <CardProyect />
-              </SwiperSlide>
-              <SwiperSlide>
-                <CardProyect />
-              </SwiperSlide>
-              <SwiperSlide>
-                <CardProyect />
-              </SwiperSlide>
-            </Swiper>
+          {/* <h2 className="text-2xl font-bold text-center">Mis proyectos</h2> */}
+          <div>
+            <Proyects />
           </div>
         </div>
         <div className="h-8 bg-violet-300 flex items-center justify-center">
