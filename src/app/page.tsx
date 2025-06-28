@@ -59,7 +59,7 @@ export default function Home() {
                     href={item.red_link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-2xl transition-colors duration-200 cursor-pointer ${item.red_class}`}
+                    // className={`text-2xl transition-colors duration-200 cursor-pointer ${item.red_class}`}
                     title={item.red_nombre || ""}
                   >
                     {iconMap[item.red_icono] ? (
@@ -91,13 +91,16 @@ export default function Home() {
             </div>
           </div>
           {/* <h2 className="text-2xl font-bold text-center">Mis proyectos</h2> */}
-          <div className="flex flex-col items-center justify-center text-center p-2">
-            <h2 className="">Proyectos Frontend</h2>
-            <Proyects />
-          </div>
-          <div className="flex flex-col items-center justify-center text-center p-2">
-            <h2>Proyectos Backend</h2>
-            <Proyects />
+          <div className="flex flex-row items-center justify-center text-center p-2">
+            <div className="flex flex-col items-center justify-center">
+              <h2 className="">Proyectos Frontend</h2>
+              <Proyects />
+            </div>
+
+            <div className="flex flex-col items-center justify-center">
+              <h2>Proyectos Backend</h2>
+              <Proyects />
+            </div>
           </div>
         </div>
 
